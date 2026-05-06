@@ -1,4 +1,3 @@
-python
 import bisect
 import hashlib
 
@@ -45,10 +44,10 @@ class ConsistentHashRing:
         return self.nodes[target_vnode_hash]
 
 
-# --- Usage ---
-ring = ConsistentHashRing(vnodes=200)
-ring.add_server("Server_A")
-ring.add_server("Server_B")
-ring.add_server("Server_C")
+if __name__ == "__main__":
+    ring = ConsistentHashRing(vnodes=200)
+    ring.add_server("Server_A")
+    ring.add_server("Server_B")
+    ring.add_server("Server_C")
 
-print(ring.get_server("sess_79879"))  # Returns the physical server ID
+    print(ring.get_server("sess_79879"))  # Returns the physical server ID
